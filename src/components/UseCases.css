@@ -1,0 +1,55 @@
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0;
+}
+
+.case-card {
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  transition: all 0.2s ease;
+  /* Collapse borders between adjacent cards */
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.case-card:hover {
+  background: var(--color-cyan-faint);
+  border-color: var(--color-border-hover);
+  z-index: 1;
+}
+
+.case-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.case-id {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+}
+
+.case-tag {
+  font-size: 0.55rem;
+  color: var(--color-cyan);
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border: 1px solid rgba(0, 255, 204, 0.15);
+  text-transform: uppercase;
+}
+
+.case-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--color-text-primary);
+}
+
+.case-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}

@@ -1,0 +1,164 @@
+.voice-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Command Registry ── */
+.command-registry {
+  margin-top: 2rem;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.registry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-base);
+}
+
+.registry-count {
+  color: var(--color-cyan);
+  font-weight: 600;
+}
+
+.registry-row {
+  display: grid;
+  grid-template-columns: 2fr auto 2fr;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 0.7rem;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.03);
+  transition: all 0.15s ease;
+  align-items: center;
+}
+
+.registry-row:last-child {
+  border-bottom: none;
+}
+
+.registry-row:hover {
+  background: var(--color-cyan-faint);
+}
+
+.registry-row.active {
+  background: rgba(0, 255, 204, 0.06);
+  border-left: 2px solid var(--color-cyan);
+}
+
+.registry-trigger {
+  color: var(--color-text-secondary);
+}
+
+.registry-arrow {
+  color: var(--color-text-muted);
+  font-size: 0.6rem;
+}
+
+.registry-response {
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+}
+
+/* ── Voice Terminal ── */
+.voice-terminal {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-base);
+  overflow: hidden;
+}
+
+.terminal-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-elevated);
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #ff3b30; }
+.terminal-dot.yellow { background: #ffcc00; }
+.terminal-dot.green { background: #28cd41; }
+
+.terminal-label {
+  margin-left: 8px;
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.terminal-body {
+  padding: 16px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-line {
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: var(--color-text-primary);
+}
+
+.terminal-line.dim {
+  color: var(--color-text-muted);
+}
+
+.terminal-line.listening {
+  color: var(--color-yellow);
+}
+
+.terminal-line.response {
+  color: var(--color-text-primary);
+}
+
+.terminal-cursor {
+  color: var(--color-cyan);
+  animation: blink 1s step-end infinite;
+}
+
+.mic-trigger {
+  margin-top: auto;
+  padding: 8px 16px;
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+.mic-trigger:hover:not(:disabled) {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+  background: var(--color-cyan-faint);
+}
+
+.mic-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .voice-layout {
+    grid-template-columns: 1fr;
+  }
+}

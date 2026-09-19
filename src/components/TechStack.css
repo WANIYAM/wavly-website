@@ -1,0 +1,90 @@
+.stack-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.tech-tag {
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background-color: rgba(6, 182, 212, 0.1);
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--color-cyan-glow);
+}
+
+.quick-start {
+  background-color: #0d1117;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+  background-color: #161b22;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mac-dots {
+  display: flex;
+  gap: 6px;
+  margin-right: 1rem;
+}
+
+.mac-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.mac-dots span:nth-child(1) { background-color: #ff5f56; }
+.mac-dots span:nth-child(2) { background-color: #ffbd2e; }
+.mac-dots span:nth-child(3) { background-color: #27c93f; }
+
+.terminal-title {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.cmd-line {
+  margin-bottom: 0.5rem;
+}
+
+.prompt {
+  color: var(--color-text-secondary);
+  margin-right: 0.5rem;
+  text-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .stack-content {
+    grid-template-columns: 1fr;
+  }
+}
