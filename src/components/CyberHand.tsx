@@ -107,7 +107,7 @@ const Finger = ({ position, rotation, scale, targets, thickness, segments }: Fin
   const midRef = useRef<THREE.Group>(null);
   const topRef = useRef<THREE.Group>(null);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     const lerpSpeed = 10;
     if (baseRef.current) baseRef.current.rotation.x = THREE.MathUtils.lerp(baseRef.current.rotation.x, targets[0], delta * lerpSpeed);
     if (midRef.current) midRef.current.rotation.x = THREE.MathUtils.lerp(midRef.current.rotation.x, targets[1] || 0, delta * lerpSpeed);
